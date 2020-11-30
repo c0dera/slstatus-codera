@@ -63,11 +63,11 @@ static const char unknown_str[] = "???";
  */
 static const struct arg args[] = {
 	/* function format          argument */
+	{ datetime, " [🕔]: [%s]", "%F %T" },
   { temp, " [CPU]: [%sc°]", "/sys/class/hwmon/hwmon0/temp1_input"},
-  { ram_free, " [RAM F]: [%s]", "NULL"},
+  { ram_free, " [RAMF]: [%s]", "NULL"},
   { uptime, " [UP]: [%s]", "NULL"},
-  { disk_free, " [ROOT]: [%s F]", "/"},
-	{ datetime, " [TIME]: [%s]", "%F %T" },
-  { run_command, " [VOL]: [%s]", "pulsemixer --get-volume --id 1" },
+  { disk_free, " [💽]: [%s]", "/"},
+  { run_command, " [🔈]: [%s]", "pulsemixer --get-volume --id 3" },
   { keymap, " [KB]: [%s]", "NULL"},
 };
