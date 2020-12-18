@@ -7,7 +7,7 @@ const unsigned int interval = 1000;
 static const char unknown_str[] = "???";
 
 /* maximum output string length */
-#define MAXLEN 128
+#define MAXLEN 320
 
 /*
  * function            description                     argument (example)
@@ -62,12 +62,15 @@ static const char unknown_str[] = "???";
  * wifi_essid          WiFi ESSID                      interface name (wlan0)
  */
 static const struct arg args[] = {
-	/* function format          argument */
-	{ datetime, " [🕔]: [%s]", "%F %T" },
-  { temp, " [CPU]: [%sc°]", "/sys/class/hwmon/hwmon0/temp1_input"},
-  { ram_free, " [RAMF]: [%s]", "NULL"},
-  { uptime, " [UP]: [%s]", "NULL"},
-  { disk_free, " [💽]: [%s]", "/"},
-  { run_command, " [🔈]: [%s]", "pulsemixer --get-volume --id 3" },
-  { keymap, " [KB]: [%s]", "NULL"},
+/* function format          argument */
+  { datetime, "^c#cc241d^ time: %s", "%F %T" },
+  { temp, "^c#d65d0e^ temp: %sc°", "/sys/class/hwmon/hwmon0/temp1_input"},
+  { ram_used, "^c#d79921^ ram: %s", "NULL"},
+  { uptime, "^c#98971a^ up: %s", "NULL"},
+  { keymap, "^c#689d6a^ kb: %s ", "NULL"},
+  // { datetime, " [🕔]: [%s]", "%F %T" },
+  // { temp, " [💻]: [%sc°]", "/sys/class/hwmon/hwmon0/temp1_input"},
+  // { ram_free, " [💻]: [%s]", "NULL"},
+  // { uptime, " [💻]: [%s]", "NULL"},
+  // { keymap, " [🔣]: [%s]", "NULL"},
 };
